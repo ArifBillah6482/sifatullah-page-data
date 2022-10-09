@@ -48,19 +48,6 @@ get(child(dbRef, `Data/`))
 fetch("https://dindar-patro-patri-default-rtdb.firebaseio.com/Data.json")
   .then((response) => response.json())
   .then((res) => {
-    document.write(`<button
-          class="removeData"
-          onclick="removeData()"
-          style="
-          color: rgb(245, 245, 245);
-            background-color: rgb(35, 37, 66);
-            position: absolute;
-            padding: 7px;
-            border: 1px solid rgb(150, 150, 150);
-          "
-        >
-          Delete All Biodata
-        </button>`);
     const datas = [];
     for (let key in res) {
       datas.unshift({ ...res[key] });
