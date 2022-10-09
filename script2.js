@@ -21,22 +21,10 @@ import {
   ref,
   get,
   child,
-  remove,
 } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-database.js";
 const db = getDatabase();
-
 //////////////////
 
-const removeData = () => {
-  alert();
-  remove(ref(db, "Data/"))
-    .then(() => {
-      alert("All Biodata Delete!");
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-};
 //////////////////
 const dbRef = ref(getDatabase());
 get(child(dbRef, `Data/`))
@@ -73,8 +61,6 @@ fetch("https://dindar-patro-patri-default-rtdb.firebaseio.com/Data.json")
         >
           Delete All Biodata
         </button>`);
-
-    console.log(res);
     const datas = [];
     for (let key in res) {
       datas.unshift({ ...res[key] });
@@ -83,6 +69,7 @@ fetch("https://dindar-patro-patri-default-rtdb.firebaseio.com/Data.json")
     datas.map((data) => {
       const {
         // id,
+        Time,
         পাত্র_পাত্রী,
         নাম,
         বয়স,
@@ -130,7 +117,14 @@ fetch("https://dindar-patro-patri-default-rtdb.firebaseio.com/Data.json")
         margin: 10px;
       "
     >
-    <p class="idNumber"  style="width: 200px; height: 20px; color: rgb(250, 30, 238)">
+   
+    <p class="idNumber"  style="width: 200px; height:max-content; color: rgb(250, 30, 238)">
+      <div style="padding: 5px">
+        <span style="color: rgb(245, 245, 245); font-weight: bold"
+          >Time: 
+        </span>
+        <span style="color: rgb(245, 245, 245)">${Time}</span>
+      </div>
 
       <div style="padding: 5px">
         <span style="color: rgb(245, 245, 245); font-weight: bold"
@@ -313,13 +307,6 @@ fetch("https://dindar-patro-patri-default-rtdb.firebaseio.com/Data.json")
         </span>
         <span style="color: rgb(245, 245, 245)">${এস্ট্রাকিছু}</span>
       </div>
-
-      <div style="padding: 5px">
-        <span style="color: rgb(245, 245, 245); font-weight: bold"
-          >ছবিঃ                    
-        </span>
-        <img style="width: 150px;" value="${img}" />
-      </div>
       
       <div style="padding: 5px">
         <span style="color: rgb(245, 245, 245); font-weight: bold"
@@ -340,7 +327,8 @@ fetch("https://dindar-patro-patri-default-rtdb.firebaseio.com/Data.json")
           >আমাদের সেবা কেমন লাগলোঃ                     
         </span>
         <span style="color: rgb(245, 245, 245)">${আমাদেরসেবা}</span>
-      </div>  </div>
+      </div>              
+     </div>
          `);
       document.querySelector(
         ".idNumber"
@@ -351,5 +339,6 @@ fetch("https://dindar-patro-patri-default-rtdb.firebaseio.com/Data.json")
       document.body.style.fontFamily = " Arial, Helvetica, sans-serif";
       document.body.style.letterSpacing = "1px";
       document.title = "দ্বিনদ্বার পাত্র/পাত্রীর সন্ধান এর ফরম তথ্য";
+      //////////////////
     });
   });
