@@ -161,6 +161,13 @@ fetch("https://dindar-patro-patri-default-rtdb.firebaseio.com/Data.json")
         </span>
         <span style="color: rgb(245, 245, 245)">${বৈবাহিক_অবস্থা}</span>
       </div>
+      
+        <div style="padding: 5px">
+        <span style="color: rgb(245, 245, 245); font-weight: bold"
+          >বর্তমান ঠিকানাঃ      
+        </span>
+        <span style="color: rgb(245, 245, 245)">${বর্তমানঠিকানা}</span>
+      </div>
 
       <div style="padding: 5px">
         <span style="color: rgb(245, 245, 245); font-weight: bold"
@@ -169,12 +176,7 @@ fetch("https://dindar-patro-patri-default-rtdb.firebaseio.com/Data.json")
         <span style="color: rgb(245, 245, 245)">${স্হায়ী_ঠিকানা}</span>
       </div>
 
-      <div style="padding: 5px">
-        <span style="color: rgb(245, 245, 245); font-weight: bold"
-          >বর্তমান ঠিকানাঃ      
-        </span>
-        <span style="color: rgb(245, 245, 245)">${বর্তমানঠিকানা}</span>
-      </div>
+    
 
       <div style="padding: 5px">
         <span style="color: rgb(245, 245, 245); font-weight: bold"
