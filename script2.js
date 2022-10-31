@@ -27,7 +27,7 @@ const db = getDatabase();
 
 //////////////////
 const dbRef = ref(getDatabase());
-get(child(dbRef, `Data/`))
+get(child(dbRef, `PendingBiodata/`))
   .then((snapshot) => {
     if (snapshot.exists()) {
       const a = snapshot.val();
@@ -45,7 +45,7 @@ get(child(dbRef, `Data/`))
 
 //////////////////
 
-fetch("https://dindar-patro-patri-default-rtdb.firebaseio.com/Data.json")
+fetch("https://dindar-patro-patri-default-rtdb.firebaseio.com/PendingBiodata.json")
   .then((response) => response.json())
   .then((res) => {
     const datas = [];
