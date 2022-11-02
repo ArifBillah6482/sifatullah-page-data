@@ -45,7 +45,7 @@ get(child(dbRef, `PendingBiodata/`))
 
 //////////////////
 
-fetch("https://dindar-patro-patri-default-rtdb.firebaseio.com/PendingBiodata.json")
+fetch("https://dindar-patro-patri-default-rtdb.firebaseio.com/Data.json")
   .then((response) => response.json())
   .then((res) => {
     const datas = [];
